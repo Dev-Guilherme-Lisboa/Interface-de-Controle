@@ -1,0 +1,263 @@
+* { 
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+    background: #f2f4f3; 
+    color: #263b42; 
+    font-family: Arial, sans-serif; 
+}
+
+.pagina {
+    width: min(700px, 100%);
+    height: auto;
+    margin: auto; 
+    padding: 24px 18px 35px; 
+}
+
+header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding-bottom: 18px; 
+    border-bottom: 1px solid #d8e0dd; 
+}
+
+h1, h2, p { 
+    margin-top: 0; 
+}
+
+h1 { 
+    margin-bottom: 6px; 
+    font-size: 28px; 
+}
+
+h2 { 
+    margin-bottom: 8px; 
+    font-size: 18px; 
+}
+
+.subtitulo, 
+.descricao, 
+.observacao { 
+    color: #71817d; 
+}
+
+.subtitulo { 
+    margin: 0; font-size: 13px; 
+}
+
+.conexao {
+  color: #287b68;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.conexao .erro {
+  color: #b5524b;
+}
+
+.ponto {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background: #48ad87;
+}
+
+.erro .ponto {
+  background: #d3625c;
+}
+
+.introducao {
+  padding: 30px 0 18px;
+}
+
+.descricao {
+  max-width: 560px;
+  margin-bottom: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.estado,
+.cartao {
+  border: 1px solid #d7e1dd;
+  border-radius: 10px;
+  background: white;
+}
+
+.estado {
+  padding: 17px;
+  border-color: #c7e5d8;
+  border-left: 4px solid #48ad87;
+  background: #eaf7f0;
+}
+
+.estado.atencao {
+  border-color: #efd9b7;
+  border-left-color: #d9943d;
+  background: #fff5e6;
+}
+
+.estado.critico {
+  border-color: #efc7c2;
+  border-left-color: #d3625c;
+  background: #fdebe8;
+}
+
+.estado-label {
+  display: block;
+  margin-bottom: 4px;
+  color: #678078;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.estado strong {
+  display: block;
+  font-size: 21px;
+}
+
+.mensagem {
+  display: block;
+  margin-top: 5px;
+  color: #71817d;
+  font-size: 11px;
+}
+
+.medicoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.cartao {
+  padding: 16px;
+}
+
+.cartao h2 {
+  color: #71817d;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.valor {
+  display: block;
+  color: #294a58;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.unidade {
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.limite,
+.observacao {
+  display: block;
+  margin-top: 7px;
+  font-size: 10px;
+}
+
+.saude {
+  margin-top: 12px;
+}
+
+.saude-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.saude-cabecalho h2 {
+  margin-bottom: 0;
+}
+
+.barra-fundo {
+  height: 8px;
+  margin-top: 12px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #e5ece9;
+}
+
+.barra {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: #4ca889;
+  transition: width 0.2s;
+}
+
+.barra.atencao {
+  background: #d9943d;
+}
+
+.barra.critico {
+  background: #d3625c;
+}
+
+.controle {
+  margin-top: 12px;
+}
+
+.botoes { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 8px; 
+    margin-top: 14px; 
+}
+
+button { 
+    min-height: 36px; 
+    padding: 8px 12px; 
+    border: 1px solid #cad8d3; 
+    border-radius: 7px; 
+    color: #36564f; 
+    background: white; 
+    font-size: 12px; 
+    cursor: pointer; 
+}
+
+button:hover { 
+    border-color: #4ca889; 
+}
+
+.principal { 
+    color: white; 
+    border-color: #287f75; 
+    background: #287f75; 
+}
+
+.principal:hover { 
+    color: white; 
+    background: #1d6b63; 
+}
+
+.cenarios { 
+    margin-top: 18px; 
+}
+
+.cenarios p { 
+    margin-bottom: 8px; 
+    color: #71817d; 
+    font-size: 11px; 
+}
+
+@media (max-width: 500px) { 
+    .medicoes { grid-template-columns: 1fr; } 
+    header { display: block; } 
+    .conexao { margin-top: 10px; } 
+}

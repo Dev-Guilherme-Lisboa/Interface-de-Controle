@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Monitoramento do Motor</title>
+</head>
+<body>
+  <main class="pagina">
+    <header>
+      <div>
+        <h1>Sentinel Motor</h1>
+        <p class="subtitulo">Interface de controle e monitoramento</p>
+      </div>
+      <div id="conexao" class="conexao"><span class="ponto"></span><span id="textoConexao">Conectando...</span></div>
+    </header>
+
+    <section class="introducao">
+      <p class="descricao">Monitoramento de temperatura, vibração e integridade do motor usando o canal ThingSpeak <strong>3575471</strong>.</p>
+    </section>
+
+    <section id="estado" class="estado">
+      <span class="estado-label">Estado atual</span>
+      <strong id="textoEstado">Aguardando leitura</strong>
+      <span id="mensagem" class="mensagem">Consultando o ThingSpeak...</span>
+    </section>
+
+    <section class="medicoes">
+      <div class="cartao">
+        <h2>Temperatura</h2>
+        <strong id="temperatura" class="valor">-- <span class="unidade">°C</span></strong>
+        <span class="limite">Atenção acima de 48 °C</span>
+      </div>
+      <div class="cartao">
+        <h2>Vibração</h2>
+        <strong id="vibracao" class="valor">-- <span class="unidade">g</span></strong>
+        <span class="limite">Atenção acima de 1,80 g</span>
+      </div>
+    </section>
+
+    <section class="cartao saude">
+      <div class="saude-cabecalho"><h2>Saúde estimada</h2><strong id="saude" class="valor">--<span class="unidade">%</span></strong></div>
+      <div class="barra-fundo"><span id="barraSaude" class="barra"></span></div>
+      <span class="observacao">Valor recebido no Field 3</span>
+    </section>
+
+    <section class="cartao controle">
+      <h2>Controle</h2>
+      <p class="observacao">Os cenários alteram apenas a visualização da interface.</p>
+      <div class="botoes">
+        <button class="principal" id="botaoPausa" onclick="alternarPausa()">Pausar atualização</button>
+        <button onclick="carregarDados()">Atualizar agora</button>
+      </div>
+      <div class="cenarios">
+        <p>Testar cenário local:</p>
+        <div class="botoes">
+          <button onclick="mostrarCenario('normal')">Normal</button>
+          <button onclick="mostrarCenario('atencao')">Atenção</button>
+          <button onclick="mostrarCenario('critico')">Crítico</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="script.js" defer></script>
+</body>
+</html>
